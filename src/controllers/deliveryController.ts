@@ -12,9 +12,10 @@ const addDelivery = asyncHandler(async (req: Request, res: Response, next: NextF
 
   const delivery = await createOneDelivery(data);
 
-  const event = await createOneEvent({ type, deliveryId: delivery.entityId });
+  const event = { type, deliveryId: delivery.entityId, data: JSON.stringify(data) };
+  await createOneEvent(event);
 
-  const state = StateMachine.createDelivery({}, { delivery, event });
+  const state = StateMachine.addDelivery({}, { ...event, data });
 
   await setCache(`Delivery:${delivery.entityId}`, JSON.stringify(state));
 

@@ -1,8 +1,8 @@
-const createDelivery = (state: any, event: any) => {
+const addDelivery = (state: any, event: any) => {
   return {
     ...event,
     state: 'READY',
   };
 };
 
-export default { createDelivery };
+export default { addDelivery };

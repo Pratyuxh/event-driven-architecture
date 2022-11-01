@@ -6,8 +6,9 @@ class EventEntity extends Entity {}
 const eventSchema = new Schema(
   EventEntity,
   {
-    deliveryId: { type: 'string' },
     type: { type: 'string' },
+    deliveryId: { type: 'string' },
+    data: { type: 'string' },
   },
   {
     dataStructure: 'HASH',

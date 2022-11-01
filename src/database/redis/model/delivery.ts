@@ -7,7 +7,7 @@ const deliverySchema = new Schema(
   DeliveryEntity,
   {
     budget: { type: 'number' },
-    notes: { type: 'string' },
+    quotes: { type: 'string' },
   },
   {
     dataStructure: 'HASH',
