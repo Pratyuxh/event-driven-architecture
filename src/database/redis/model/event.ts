@@ -8,7 +8,6 @@ const eventSchema = new Schema(
   {
     deliveryId: { type: 'string' },
     type: { type: 'string' },
-    data: { type: 'string' },
   },
   {
     dataStructure: 'HASH',
