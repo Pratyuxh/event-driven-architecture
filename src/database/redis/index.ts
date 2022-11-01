@@ -1,14 +1,22 @@
-import { createClient } from 'redis';
+import { Client } from 'redis-om';
 import { redis } from '../../config';
 import Logger from '../../core/Logger';
 
-const client = createClient({
-  url: redis.url,
-  username: redis.username,
-  password: redis.password,
-});
+const client = new Client();
 
-client.on('error', (err) => {
-  Logger.info('Redis client error');
-  Logger.error(err);
-});
+// Build the connection string
+const dbURI = `redis://${redis.username}:${encodeURIComponent(redis.password)}@${redis.host}:${
+  redis.port
+}`;
+
+console.log(dbURI);
+
+client
+  .open(dbURI)
+  .then(() => {
+    Logger.info('Redis connection done');
+  })
+  .catch((err) => {
+    Logger.info('Redis connection error');
+    Logger.error(err);
+  });

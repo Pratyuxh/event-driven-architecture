@@ -12,9 +12,9 @@ const options = {
 };
 
 // Build the connection string
-const dbURI = `mongodb://${mongodb.user}:${encodeURIComponent(mongodb.password)}@${mongodb.host}:${
-  mongodb.port
-}/${mongodb.name}`;
+const dbURI = `mongodb://${mongodb.username}:${encodeURIComponent(mongodb.password)}@${
+  mongodb.host
+}:${mongodb.port}/${mongodb.name}`;
 
 Logger.debug(dbURI);
 
@@ -24,9 +24,9 @@ mongoose
   .then(() => {
     Logger.info('Mongoose connection done');
   })
-  .catch((e) => {
+  .catch((err) => {
     Logger.info('Mongoose connection error');
-    Logger.error(e);
+    Logger.error(err);
   });
 
 // CONNECTION EVENTS

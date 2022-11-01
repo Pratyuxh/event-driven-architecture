@@ -7,6 +7,7 @@ import cors from 'cors';
 import { corsUrl, environment } from './config';
 import { NotFoundError, ApiError, InternalError } from './core/ApiError';
 import routesV1 from './routes/v1';
+import './database/redis';
 
 const app = express();
 

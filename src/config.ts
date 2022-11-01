@@ -8,12 +8,14 @@ export const mongodb = {
   name: process.env.MONGODB_NAME || '',
   host: process.env.MONGODB_HOST || '',
   port: process.env.MONGODB_PORT || '',
-  user: process.env.MONGODB_USER || '',
-  password: process.env.MONGODB_USER_PWD || '',
+  username: process.env.MONGODB_USER_NAME || '',
+  password: process.env.MONGODB_USER_PASSWORD || '',
 };
 
 export const redis = {
-  url: process.env.REDIS_URL || '',
-  username: process.env.REDIS_USERNAME || '',
-  password: process.env.REDIS_PASSWORD || '',
+  name: process.env.REDIS_NAME || '',
+  host: process.env.REDIS_HOST || '',
+  port: process.env.REDIS_PORT || '',
+  username: process.env.REDIS_USER_NAME || '',
+  password: process.env.REDIS_USER_PASSWORD || '',
 };
