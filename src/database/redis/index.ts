@@ -20,10 +20,4 @@ redisClient
     Logger.error(err);
   });
 
-// If the Node process ends, close the Redis connection
-process.on('SIGINT', () => {
-  redisClient.close();
-  Logger.info('Redis default connection disconnected through app termination');
-});
-
 export default redisClient;

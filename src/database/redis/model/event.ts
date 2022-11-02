@@ -7,7 +7,7 @@ const eventSchema = new Schema(
   EventEntity,
   {
     type: { type: 'string' },
-    deliveryId: { type: 'string' },
+    orderId: { type: 'string' },
     data: { type: 'string' },
   },
   {
